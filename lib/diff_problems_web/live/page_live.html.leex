@@ -1,0 +1,14 @@
+<%= unless @status == :status_1 do %>
+
+  <%= f = form_for :tmp, "#", [phx_submit: :event_1] %>
+    <%= live_component(
+      @socket,
+      DiffProblems.Button,
+      id: "button-id",
+      text: "Text"
+    ) %>
+  </form>
+
+<% else %>
+  <div class="loader">loading...</div>
+<% end %>
